@@ -1,0 +1,33 @@
+READ ME
+
+ECC-IDS Prototype
+=================
+
+This demonstrates a dual-layer intrusion-detection idea.
+
+Layer 1 – ECC Structural Check
+------------------------------
+
+Each event carries a 6-bit codeword.
+If H×z^T ≠ 0 → parity fails → structural anomaly.
+
+Layer 2 – Grammar Sequence Check
+--------------------------------
+
+Valid order: A→C/D→E.
+If order breaks → temporal anomaly.
+
+Usage
+-----
+
+1. python generate_synthetic_data.py
+2. python eccids.py
+
+The first script makes data.csv.
+The second analyzes it and prints anomalies.
+
+Requirements
+------------
+
+Python 3.9+  
+numpy
